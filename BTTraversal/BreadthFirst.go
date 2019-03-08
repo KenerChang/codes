@@ -1,17 +1,21 @@
 package BTTraversal
 
 type Node struct {
-	Value int
-	LeftNode *Node
+	Value     int
+	LeftNode  *Node
 	RightNode *Node
-	Viewed bool
+	Viewed    bool
 }
 
 // InOrder take root node as input
 // and output values in traversal order
 func BreadthFirst(root *Node) []int {
+	// check if empty tree
+	if root == nil {
+		return []int{}
+	}
 	values := []int{}
-	queue := []*Node {
+	queue := []*Node{
 		root,
 	}
 
